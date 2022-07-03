@@ -12,7 +12,7 @@ public class DashboardPage {
     private ElementsCollection cards = $$(".list__item div");
     private ElementsCollection actionButton = $$("[data-test-id='action-deposit'] .button__text");
     private SelenideElement refreshButton = $("[data-test-id='action-reload'] .button__text");
-    // !!!! private SelenideElement error
+    //  error
 
     public TransferPage chooseCardTo(int indexCardTo) {
         actionButton.get(indexCardTo).click();
