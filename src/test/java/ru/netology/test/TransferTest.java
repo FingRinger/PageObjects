@@ -29,13 +29,13 @@ public class TransferTest {
     public void transfer100() {
         TransferPage transferPage = dashboardPage.chooseCardTo(0);
         transferPage.transfer(user, 100, 1);
-        dashboardPage.assertBalance(0, 10_100);
-        dashboardPage.assertBalance(1, 9_900);
+        dashboardPage.assertBalance(0, 10100);
+        dashboardPage.assertBalance(1, 9900);
 
         dashboardPage.chooseCardTo(1);
         transferPage.transfer(user, 100, 0);
-        dashboardPage.assertBalance(0, 10_000);
-        dashboardPage.assertBalance(1, 10_000);
+        dashboardPage.assertBalance(0, 10000);
+        dashboardPage.assertBalance(1, 10000);
 
 
     }
