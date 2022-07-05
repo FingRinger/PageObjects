@@ -1,14 +1,14 @@
-package java.ru.netology.test;
+package ru.netology.test;
 
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.page.DashboardPage;
+import ru.netology.page.TransferPage;
 
-import java.ru.netology.data.DataHelper;
-import java.ru.netology.page.DashboardPage;
-import java.ru.netology.page.LoginPage;
-import java.ru.netology.page.TransferPage;
-import java.ru.netology.page.VerificationPage;
+import ru.netology.data.DataHelper;
+import ru.netology.page.LoginPage;
+import ru.netology.page.VerificationPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
