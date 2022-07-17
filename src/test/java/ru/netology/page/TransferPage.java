@@ -16,9 +16,15 @@ public class TransferPage {
     private SelenideElement cancelButton = $("[data-test-id ='action-cancel']");
 
 
-    public void transfer (DataHelper user, int amount, int indexCardFrom) {
+    //public void transfer (DataHelper user, int amount, int indexCardFrom) {
+      //  sum.setValue(String.valueOf(amount));
+      //  from.setValue(user.getCard(indexCardFrom));
+      //  topUp.click();
+   // }
+
+    public void transfer (int amount, String cardFrom) {
         sum.setValue(String.valueOf(amount));
-        from.setValue(user.getCard(indexCardFrom));
+        from.setValue(cardFrom);
         topUp.click();
     }
 }

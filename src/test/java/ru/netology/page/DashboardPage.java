@@ -26,8 +26,8 @@ public class DashboardPage {
        return balance;
     }
 
-    public void assertBalance (int index, int expectedBalance) {
-        int actualBalance = getBalance(index);
-        assertEquals(expectedBalance, actualBalance);
-    }
+   // public void assertBalance (int index, int expectedBalance) {
+   //     int actualBalance = getBalance(index);
+   //     assertEquals(expectedBalance, actualBalance);
+   //  }
 }
