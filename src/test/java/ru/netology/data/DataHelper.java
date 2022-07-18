@@ -26,9 +26,4 @@ public class DataHelper {
         return new VerificationCode("12345");
 }
 
-
-     //   public String getCard(int index) {
-     //       String card = cards[index];
-     //       return card;
-     //   }
     }

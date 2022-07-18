@@ -14,8 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TransferTest {
-    DataHelper user;
-    DashboardPage dashboardPage;
+
 
     @BeforeEach
     public void auth() {
@@ -28,25 +27,37 @@ public class TransferTest {
     }
 
     @Test
-    public void transfer100() {
+    public void transfer100to() {
+        DashboardPage dashboardPage = new DashboardPage();
         TransferPage transferPage = dashboardPage.chooseCardTo(0);
+
         transferPage.transfer( 100, "5559 0000 0000 0002");
 
-       int cardToBalance = dashboardPage.getBalance(0);
-       int cardFromBalance = dashboardPage.getBalance(1);
+       int cardToBalance = dashboardPage.getFirstCardBalance();
+       int cardFromBalance = dashboardPage.getSecondCardBalance();
 
        int cardToExpectedBalance = 10100;
        int cardFromExpectedBalance = 9900;
 
        assertEquals(cardToExpectedBalance, cardToBalance );
        assertEquals(cardFromExpectedBalance, cardFromBalance);
+    }
 
-      //  dashboardPage.chooseCardTo(1);
-      //  transferPage.transfer(user, 100, 0);
-      //  dashboardPage.assertBalance(0, 10000);
-      //  dashboardPage.assertBalance(1, 10000);
+    @Test
+    public void transfer100back() {
+        DashboardPage dashboardPage = new DashboardPage();
+        TransferPage transferPage = dashboardPage.chooseCardTo(1);
 
+        transferPage.transfer( 100, "5559 0000 0000 0001");
 
+        int cardToBalance = dashboardPage.getFirstCardBalance();
+        int cardFromBalance = dashboardPage.getSecondCardBalance();
+
+        int cardToExpectedBalance = 10000;
+        int cardFromExpectedBalance = 10000;
+
+        assertEquals(cardToExpectedBalance, cardToBalance );
+        assertEquals(cardFromExpectedBalance, cardFromBalance);
     }
 
 }
